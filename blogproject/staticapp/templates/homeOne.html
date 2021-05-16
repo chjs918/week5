@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>가입인사</h1>
+ <div class="contain">
+ {% for blog in blog %}
+    <div>
+    <h3 class="round">{{blog.blog_title}}</h3>
+    <h5><b>{{blog.blog_writer}}</b></h5>
+    {{blog.blog_summary}} 
+    <br>
+    <a href="{%url 'detailOne' blog.id %}">...more</a>
+    <br>
+    </div>
+ {% endfor %} 
+</div>
+<br> <br>
+<div>
+    <a href="{%url 'newOne'%}">Introduce Yourself!</a>
+</div>
+{% endblock %}

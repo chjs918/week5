@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Introduce Yourself</h1>
+
+<form action="{%url 'createOne'%}" method="post">
+    {%csrf_token%} 
+    <p> 제목: <input type="text" name = "title"></p>
+    <p>이름: <input type="text" name = "writer"></p>
+    내용:  <textarea name="body" id="" cols="30" rows="10"></textarea>
+    
+    <br><br>
+    <button type ="submit">submit</button>
+</form>
+{% endblock %}
